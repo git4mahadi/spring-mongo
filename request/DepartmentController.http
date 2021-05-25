@@ -1,0 +1,32 @@
+
+###
+POST http://localhost:9099/api/department
+Content-Type: application/json
+
+{
+    "departmentCode":"D17",
+    "departmentName":"to delete"
+}
+
+###
+GET http://localhost:9099/api/department/id/60ac7283ff70725b83c8dab2
+Accept: application/json
+
+###
+PUT http://localhost:9099/api/department/id/60ac7283ff70725b83c8dab2
+Content-Type: application/json
+
+{
+  "departmentCode":"D12",
+  "departmentName":"ETE"
+}
+
+
+###
+GET http://localhost:9099/api/departments
+Accept: application/json
+
+
+###
+DELETE http://localhost:9099/api/department/id/60acbac5d2318f1cd45bf143
+Accept: application/json

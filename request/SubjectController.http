@@ -1,0 +1,25 @@
+
+###
+POST http://localhost:9099/api/subject
+Content-Type: application/json
+
+{
+  "subjectName":"Math"
+}
+
+###
+GET http://localhost:9099/api/subject/id/60ac7d94ea3fdf2dbab8f919
+Accept: application/json
+
+###
+PUT http://localhost:9099/api/subject/id/60ac7d94ea3fdf2dbab8f919
+Content-Type: application/json
+
+{
+  "subjectName":"Bengali Updated"
+}
+
+
+###
+GET http://localhost:9099/api/subjects
+Accept: application/json

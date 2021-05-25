@@ -1,0 +1,70 @@
+
+###
+POST http://localhost:9099/api/student
+Content-Type: application/json
+
+{
+  "name": "Abdullah",
+  "email": "shimul@gmail.com",
+  "mobile": "018",
+  "departmentId": "60ac7641ae8e124a320a649b",
+  "subjectMarkList": [
+    {
+      "subjectId": "60ac81c66177ca40cbdd8581",
+      "obtainMarks": 70.00
+    },
+    {
+      "subjectId": "60ac81cb6177ca40cbdd8582",
+      "obtainMarks": 80.00
+    },
+    {
+      "subjectId": "60ac81cf6177ca40cbdd8583",
+      "obtainMarks": 90.00
+    }
+  ]
+}
+
+###
+PUT http://localhost:9099/api/student/id/60ac9c4ac843730459a77227
+Content-Type: application/json
+
+{
+  "name": "shimul updated",
+  "email": "shimulupdated@gmail.com",
+  "mobile": "01830889631",
+  "departmentId": "60ac7641ae8e124a320a649b",
+  "subjectMarkList": [
+    {
+      "subjectId": "60ac81c66177ca40cbdd8581",
+      "obtainMarks": 70.00
+    },
+    {
+      "subjectId": "60ac81cb6177ca40cbdd8582",
+      "obtainMarks": 80.00
+    },
+    {
+      "subjectId": "60ac7d87ea3fdf2dbab8f918",
+      "obtainMarks": 90.00
+    }
+  ]
+}
+
+###
+GET http://localhost:9099/api/student/id/60ac7af0f86da3517f90272b
+Accept: application/json
+
+###
+GET http://localhost:9099/api/students
+Accept: application/json
+
+
+###
+DELETE http://localhost:9099/api/student/id/60ac9c4ac843730459a77227
+Accept: application/json
+
+
+###
+GET http://localhost:9099/api/students/pageNo/1/pageSize/10
+Accept: application/json
+
+
