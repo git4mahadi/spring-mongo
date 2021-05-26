@@ -67,4 +67,16 @@ public class StudentController {
     }
 
 
+    @GetMapping("/students/email-like/{emailDomain}")
+    public List<Student> getAllStudentsContainsSpecificDomainEmail(@PathVariable String emailDomain) {
+        return studentService.getAllStudentsContainsSpecificDomainEmail(emailDomain);
+    }
+
+
+    @GetMapping("/students/name-starts-with/{name}")
+    public List<Student> findByNameStartsWith(@PathVariable String name) {
+        return studentService.findByNameStartsWith(name);
+    }
+
+
 }

@@ -4,8 +4,8 @@ POST http://localhost:9099/api/department
 Content-Type: application/json
 
 {
-    "departmentCode":"D17",
-    "departmentName":"to delete"
+    "departmentCode":"D3",
+    "departmentName":"EEE"
 }
 
 ###

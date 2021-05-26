@@ -4,7 +4,7 @@ POST http://localhost:9099/api/subject
 Content-Type: application/json
 
 {
-  "subjectName":"Math"
+  "subjectName":"Bengali"
 }
 
 ###

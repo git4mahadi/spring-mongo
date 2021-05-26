@@ -30,14 +30,14 @@ public class StudentService {
         Student student = new ModelMapper().map(studentDTO, Student.class);
         student.setId(null);
         departmentService.findDepartmentById(studentDTO.getDepartmentId())
-                .ifPresent(department-> {
+                .ifPresent(department -> {
                     student.setDepartment(department);
                 });
 
         student.setSubjects(studentDTO.getSubjectMarkList().stream()
-        .map(subject-> new SubjectMark(subjectService.getSubjectById(subject.getSubjectId()).orElseThrow(),
-                subject.getObtainMarks()))
-        .collect(Collectors.toList()));
+                .map(subject -> new SubjectMark(subjectService.getSubjectById(subject.getSubjectId()).orElseThrow(),
+                        subject.getObtainMarks()))
+                .collect(Collectors.toList()));
 
         studentRepository.save(student);
     }
@@ -49,16 +49,16 @@ public class StudentService {
 
 
     public void updateStudent(String studentId, StudentDTO studentDTO) {
-        studentRepository.findById(studentId).ifPresent(student-> {
+        studentRepository.findById(studentId).ifPresent(student -> {
             student.setName(studentDTO.getName());
             student.setEmail(studentDTO.getEmail());
             student.setMobile(studentDTO.getMobile());
             departmentService.findDepartmentById(studentDTO.getDepartmentId())
-                    .ifPresent(department-> {
+                    .ifPresent(department -> {
                         student.setDepartment(department);
                     });
             student.setSubjects(studentDTO.getSubjectMarkList().stream()
-                    .map(subject-> new SubjectMark(subjectService.getSubjectById(subject.getSubjectId()).orElseThrow(),
+                    .map(subject -> new SubjectMark(subjectService.getSubjectById(subject.getSubjectId()).orElseThrow(),
                             subject.getObtainMarks()))
                     .collect(Collectors.toList()));
 
@@ -81,7 +81,7 @@ public class StudentService {
 //        Sort sort = Sort.by(Sort.Direction.ASC, "name");
         Sort sort = Sort.by(Sort.Direction.ASC, "name", "email");
 //        Pageable pageable = PageRequest.of(pageNo-1, pageSize);
-        Pageable pageable = PageRequest.of(pageNo-1, pageSize, sort);
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
         return studentRepository.findAll(pageable).getContent();
     }
 
@@ -94,6 +94,14 @@ public class StudentService {
         return studentRepository.findBySubjectsSubjectSubjectName(subjectName);
     }
 
+    public List<Student> getAllStudentsContainsSpecificDomainEmail(String emailDomain) {
+        return studentRepository.findByEmailIsLike(emailDomain);
+    }
+
+
+    public List<Student> findByNameStartsWith(String name) {
+        return studentRepository.findByNameStartsWith(name);
+    }
 
 
 }

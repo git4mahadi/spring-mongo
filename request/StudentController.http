@@ -4,21 +4,21 @@ POST http://localhost:9099/api/student
 Content-Type: application/json
 
 {
-  "name": "Abdullah",
-  "email": "shimul@gmail.com",
+  "name": "mahadi",
+  "email": "hasan@yahoo.com",
   "mobile": "018",
-  "departmentId": "60ac7641ae8e124a320a649b",
+  "departmentId": "60add24614fc127b728417a2",
   "subjectMarkList": [
     {
-      "subjectId": "60ac81c66177ca40cbdd8581",
+      "subjectId": "60add29e14fc127b728417a5",
       "obtainMarks": 70.00
     },
     {
-      "subjectId": "60ac81cb6177ca40cbdd8582",
+      "subjectId": "60add2a514fc127b728417a6",
       "obtainMarks": 80.00
     },
     {
-      "subjectId": "60ac81cf6177ca40cbdd8583",
+      "subjectId": "60add2ac14fc127b728417a7",
       "obtainMarks": 90.00
     }
   ]
@@ -65,6 +65,15 @@ Accept: application/json
 
 ###
 GET http://localhost:9099/api/students/pageNo/1/pageSize/10
+Accept: application/json
+
+### getAllStudentsContainsSpecificDomainEmail
+GET http://localhost:9099/api/students/email-like/yahoo.com
+Accept: application/json
+
+
+### findByNameStartsWith
+GET http://localhost:9099/api/students/name-starts-with/mahadi
 Accept: application/json
 
 
