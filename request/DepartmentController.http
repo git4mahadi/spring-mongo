@@ -13,12 +13,12 @@ GET http://localhost:9099/api/department/id/60ac7283ff70725b83c8dab2
 Accept: application/json
 
 ###
-PUT http://localhost:9099/api/department/id/60ac7283ff70725b83c8dab2
+PUT http://localhost:9099/api/department/id/60add24614fc127b728417a2
 Content-Type: application/json
 
 {
-  "departmentCode":"D12",
-  "departmentName":"ETE"
+  "departmentCode":"D1",
+  "departmentName":"Computer Science 2"
 }
 
 

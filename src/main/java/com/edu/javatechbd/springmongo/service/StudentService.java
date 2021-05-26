@@ -29,10 +29,9 @@ public class StudentService {
     public void createNewStudent(StudentDTO studentDTO) {
         Student student = new ModelMapper().map(studentDTO, Student.class);
         student.setId(null);
-        departmentService.findDepartmentById(studentDTO.getDepartmentId())
-                .ifPresent(department -> {
-                    student.setDepartment(department);
-                });
+        departmentService.findDepartmentById(studentDTO.getDepartmentId()).ifPresent(department -> {
+            student.setDepartment(department);
+        });
 
         student.setSubjects(studentDTO.getSubjectMarkList().stream()
                 .map(subject -> new SubjectMark(subjectService.getSubjectById(subject.getSubjectId()).orElseThrow(),
@@ -85,6 +84,10 @@ public class StudentService {
         return studentRepository.findAll(pageable).getContent();
     }
 
+    public List<Student> getAllStudentByDepartmentId(String departmentId) {
+        return studentRepository.findAllByDepartment_Id(departmentId);
+    }
+
     public List<Student> getAllStudentByDepartmentName(String departmentName) {
         return studentRepository.findAllByDepartment_DepartmentName(departmentName);
     }
@@ -101,6 +104,10 @@ public class StudentService {
 
     public List<Student> findByNameStartsWith(String name) {
         return studentRepository.findByNameStartsWith(name);
+    }
+
+    public List<Student> getByStudentName (String name) {
+        return studentRepository.getByStudentName(name);
     }
 
 

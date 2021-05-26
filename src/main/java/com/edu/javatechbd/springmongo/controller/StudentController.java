@@ -54,8 +54,13 @@ public class StudentController {
         return studentService.getAllStudentsWithPagination(pageNo, pageSize);
     }
 
+    @GetMapping("/students/department-id/{departmentId}")
+    public List<Student> getAllStudentByDepartmentId(@PathVariable String departmentId) {
+        return studentService.getAllStudentByDepartmentId(departmentId);
+    }
 
-    @GetMapping("/students/departmentName/{departmentName}")
+
+    @GetMapping("/students/department-name/{departmentName}")
     public List<Student> getAllStudentByDepartmentName(@PathVariable String departmentName) {
         return studentService.getAllStudentByDepartmentName(departmentName);
     }
@@ -76,6 +81,12 @@ public class StudentController {
     @GetMapping("/students/name-starts-with/{name}")
     public List<Student> findByNameStartsWith(@PathVariable String name) {
         return studentService.findByNameStartsWith(name);
+    }
+
+
+    @GetMapping("/students/student-name/{name}")
+    public List<Student> getByStudentName(@PathVariable String name) {
+        return studentService.getByStudentName(name);
     }
 
 

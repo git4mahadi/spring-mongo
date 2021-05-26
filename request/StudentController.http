@@ -64,6 +64,11 @@ Accept: application/json
 
 
 ###
+
+GET http://localhost:9099/api/students/department-name/Computer Science 2
+Accept: application/json
+
+###
 GET http://localhost:9099/api/students/pageNo/1/pageSize/10
 Accept: application/json
 
