@@ -43,3 +43,6 @@ db.getCollection('student').find({"email": /gmail/});
 
 #### name starts with Mahadi (case sensitive)
 db.getCollection('student').find({"name": /^Mahadi/})
+
+#### Running docker container for mongodb
+sudo docker run --name docker-mongo -v /home/software/fileuploads/mongodata:/data/db -d -p 27017:27017 mongo
