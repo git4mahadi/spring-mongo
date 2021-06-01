@@ -46,3 +46,17 @@ db.getCollection('student').find({"name": /^Mahadi/})
 
 #### Running docker container for mongodb
 sudo docker run --name docker-mongo -v /home/software/fileuploads/mongodata:/data/db -d -p 27017:27017 mongo
+
+
+### Install mongodb compass
+https://docs.mongodb.com/compass/current/install/
+
+### Uninstall mongodb
+sudo apt-get autoremove --purge mongodb
+
+
+### Uninstall mongodb compass
+sudo dpkg --remove mongodb-compass
+
+sudo apt --fix-broken install
+
