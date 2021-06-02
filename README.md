@@ -1,5 +1,6 @@
 #### find single record
 db.getCollection('spring').find({"name": "shimul"})
+db.getCollection('spring').find({}, {_id: 1, name:1}).pretty();
 
 #### and query
 db.getCollection('spring').find({$and: [{"name": "shimul"}, {"email": "shimul@gmail.com"} ]})
