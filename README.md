@@ -61,3 +61,7 @@ sudo dpkg --remove mongodb-compass
 
 sudo apt --fix-broken install
 
+
+
+sudo docker run --name docker-mongo -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=mongo092624 -v /opt/fileuploads/mongodata:/data/db -d -p 27017:27017 mongo
+
