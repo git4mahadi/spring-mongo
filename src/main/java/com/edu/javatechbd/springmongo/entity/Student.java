@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
-@Document(collection = "student")
+@Document(collection = "students")
 @Data
 @ToString
 public class Student {
